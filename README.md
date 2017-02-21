@@ -11,3 +11,6 @@ This is a plugin for WonderCMS (https://www.wondercms.com). It allows to add and
 - Add, delete multiple additional contents below default content box.
 - Additional contents is separate on each page.
 - Allow to show or hide each additional contents.
+
+# Update
+* 2017-02-21 Initial version
