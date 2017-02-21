@@ -13,4 +13,5 @@ This is a plugin for WonderCMS (https://www.wondercms.com). It allows to add and
 - Allow to show or hide each additional contents.
 
 # Update
-* 2017-02-21 Initial version
+* 1.0.0 - 2017-02-21
+ - Initial version
