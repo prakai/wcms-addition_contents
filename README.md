@@ -10,14 +10,14 @@ This is a plugin for WonderCMS (https://www.wondercms.com). It allows to add and
 # For WonderCMS-2.0
 Add hook to wCMS::page() method by replace the last line of wCMS::page().
 
+```
 public static function page($key) {
-
-	:
-	
--	return isset($keys[$key]) ? $keys[$key] : '';
-+	$content = isset($keys[$key]) ? $keys[$key] : '';
-+	return wCMS::_hook('onPage', $content, $key)[0];
+	:	
+	//return isset($keys[$key]) ? $keys[$key] : '';
+	$content = isset($keys[$key]) ? $keys[$key] : '';
+	return wCMS::_hook('onPage', $content, $key)[0];
 }  
+```
 
 # Features
 - Add, delete multiple additional contents below default content box.
