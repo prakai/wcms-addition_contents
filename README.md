@@ -23,7 +23,7 @@ public static function page($key) {
 - Add, delete multiple additional contents below default content box.
 - Additional contents is separate on each page.
 - Allow to show or hide each additional contents.
-- Suports both WonderCMS-1.x and WonderCMS-2.0
+- Supports both WonderCMS-1.x and WonderCMS-2.0
 
 # Update
 * 1.1.0 - 2017-02-27
