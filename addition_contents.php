@@ -50,7 +50,7 @@ function loadAdditionContentsEditableV1($contents) {
     $content = $contents[0];
     $subside = $contents[1];
 
-    $page = mb_strtolower(wCMS::$_currentPage);
+    $page = wCMS::$_currentPage;
     wCMS::$currentPage = $page;
 
     if (wCMS::$loggedIn) {
@@ -171,8 +171,8 @@ function loadAdditionContentsEditableV2($contents) {
     $content = $contents[0];
 
     $target = 'pages';
-    $page = mb_strtolower(wCMS::$currentPage);
-    wCMS::$currentPage = $page;
+    $page = wCMS::$currentPage;
+    //wCMS::$currentPage = $page;
 
     if (wCMS::$loggedIn) {
         if (isset($_POST['delac'])) {
