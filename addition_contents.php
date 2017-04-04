@@ -5,23 +5,22 @@
  * It allows add add manage addition contents on page.
  *
  * @author  Prakai Nadee <prakai@rmuti.acth>
+ * @version 1.2.0
  * @version 1.1.0
  */
 
- if(defined('VERSION') && !defined('version'))
+if(defined('VERSION') && !defined('version'))
   	define('version', VERSION);
- if(version<'2.0.0')
-     defined('INC_ROOT') OR die('Direct access is not allowed.');
+if(version<'2.0.0')
+	defined('INC_ROOT') OR die('Direct access is not allowed.');
 
- if(version<'2.0.0') {
-     wCMS::addListener('css', 'loadAdditionContentsCSS');
-     wCMS::addListener('js', 'loadAdditionContentsJS');
-     wCMS::addListener('editable', 'loadAdditionContentsEditableV1');
- } else {
-     wCMS::addListener('onJavaScript', 'loadAdditionContentsJS');
-     wCMS::addListener('onStyle', 'loadAdditionContentsCSS');
-     wCMS::addListener('onPage', 'loadAdditionContentsEditableV2');
- }
+wCMS::addListener('css', 'loadAdditionContentsCSS');
+wCMS::addListener('js', 'loadAdditionContentsJS');
+if(version<'2.0.0') {
+	wCMS::addListener('editable', 'loadAdditionContentsEditableV1');
+} else {
+	wCMS::addListener('page', 'loadAdditionContentsEditableV2');
+}
 
 function loadAdditionContentsJS($args) {
     $script = <<<'EOT'
@@ -165,14 +164,13 @@ function getContentV1($key, $page = false) {
 }
 
 function loadAdditionContentsEditableV2($contents) {
-    if ($contents[1]!='html')
+    if ($contents[1]!='content')
         return $contents;
 
     $content = $contents[0];
 
     $target = 'pages';
     $page = wCMS::$currentPage;
-    //wCMS::$currentPage = $page;
 
     if (wCMS::$loggedIn) {
         if (isset($_POST['delac'])) {
