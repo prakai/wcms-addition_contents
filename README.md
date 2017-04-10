@@ -1,6 +1,9 @@
 # wcms-addition_contents
 This is a plugin for WonderCMS (https://www.wondercms.com). It allows to add and manage additional contents on page.
 
+# Demo
+https://wondercms-demo.000webhostapp.com/
+
 # Download and Setup
 1. Download the ZIP file.
 2. Create folder named "addition_contents" in WonderCMS plugins folder. 
